@@ -365,14 +365,14 @@ function _draw()
     title_draw()
   elseif mode==1 then
     spr(128,9,104,14,3)
-    center("press 🅾️",60,0)
-    center("(❎ for tutorial)",68,0)
+    center("press z",60,0)
+    center("(x for tutorial)",68,0)
   elseif mode==2 then
     rectfill(0,60,127,72,7)
     cursor(8,52)
     color(0)
     print("⬅️➡️⬆️⬇️: move")
-    print("🅾️: start and finish a\n    single stroke\n")
+    print("z: start and finish a\n    single stroke\n")
     print("flip tiles so each horizontal\nline is one color")
     print("e.g. from ▒/▥ to █/▤")
   elseif mode==3 then
@@ -414,11 +414,11 @@ function _draw()
       camera()
       center("clear!",16,3)
       if lvls_beat<100 and find_unsolved() then
-        print("🅾️ next unsolved level",20,108,7)
-        print("❎ back",20,116,7)
+        print("z: next unsolved level",20,108,7)
+        print("x: back",20,116,7)
         mode=9
       else
-        center("❎ back",108,7)
+        center("x: back",108,7)
         mode=8
       end
     else
@@ -445,8 +445,8 @@ function _draw()
       poke4(0x4300,peek4(0x5f28))
       camera()
       center("failed",16,8)
-      print("🅾️ try again",40,108,7)
-      print("❎ back",40,116,7)
+      print("z: try again",40,108,7)
+      print("x: back",40,116,7)
       poke4(0x5f28,peek4(0x4300))
       mode=7
     end
